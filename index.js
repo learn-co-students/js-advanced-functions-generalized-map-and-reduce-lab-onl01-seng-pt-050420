@@ -22,3 +22,22 @@ function reduce(sourceArray, fn, start){
   
     return r;
 }
+
+function mapMultiplier(sourceArray) {
+    return function(multiplier)
+    {return sourceArray.map(source => {
+        return source * multiplier
+    })}
+}
+
+function mapToNegativize(sourceArray){
+    // return mapMultiplier(sourceArray)(-1)
+    let negativeArray= [];
+
+    sourceArray.forEach(source => {
+     negativeArray.push(source * -1)
+     });
+     return negativeArray;
+}
+
+console.log(numbers, mapToNegativize)
